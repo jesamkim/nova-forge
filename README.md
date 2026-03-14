@@ -11,8 +11,8 @@ Amazon Bedrock Nova Micro 모델을 한국어 감성 분류 태스크에 맞게 
 | **추론 모델 ID** | `us.amazon.nova-micro-v1:0` (inference profile) |
 | **Customization** | SFT (FINE_TUNING) |
 | **태스크** | 한국어 리뷰 감성 분류 (positive / negative / neutral) |
-| **학습 데이터** | 합성 데이터 500개 (train) + 100개 (val) |
-| **테스트 데이터** | 100개 (8개 도메인, 혼합 감성 30% 포함) |
+| **학습 데이터** | Synthetic Data 500개 (train) + 100개 (val) |
+| **테스트 데이터** | Synthetic Data 100개 (8개 도메인, 혼합 감성 30% 포함) |
 | **하이퍼파라미터** | epoch=3, batch_size=1, lr=1e-5 |
 | **리전** | us-east-1 |
 | **AWS Profile** | profile2 |
@@ -176,6 +176,8 @@ aws bedrock delete-custom-model \
 ```
 
 ## 학습 데이터 형식
+
+학습/검증/테스트 데이터는 모두 **Synthetic Data**입니다. 실제 리뷰가 아닌, 템플릿 기반으로 프로그래밍 생성한 한국어 감성 분류 데이터입니다 (`scripts/generate_data.py`).
 
 Nova 모델은 Converse API 형식의 JSONL을 요구합니다 (다른 Bedrock 모델과 형식이 다름).
 
