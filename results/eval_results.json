@@ -1,0 +1,19 @@
+{
+  "test_count": 100,
+  "base_model": {
+    "accuracy": 0.73,
+    "per_class": {
+      "positive": 0.9706,
+      "negative": 0.9394,
+      "neutral": 0.2727
+    }
+  },
+  "custom_model": {
+    "accuracy": 0.99,
+    "per_class": {
+      "positive": 1.0,
+      "negative": 1.0,
+      "neutral": 0.9697
+    }
+  }
+}
